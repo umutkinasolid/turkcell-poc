@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="CustomBottomBar">
+        <attr name="arcHeightDif" format="dimension"></attr>
+        <attr name="arcPaddingTop" format="dimension"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="CustomTopBar">
+        <attr name="arcHeight" format="dimension"></attr>
+    </declare-styleable>
+</resources>

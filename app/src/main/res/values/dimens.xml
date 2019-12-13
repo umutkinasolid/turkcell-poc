@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dp_15">1px</dimen>
+    <dimen name="home_button_size">44dp</dimen>
+    <dimen name="home_button_padding">9dp</dimen>
+</resources>

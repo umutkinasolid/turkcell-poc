@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Poc</string>
+
+    <string name="gb_format">%dGB</string>
+    <string name="min_format">%dDK</string>
+    <string name="sms_format">+ %d SMS</string>
+    <string name="mins_format">+ %d MINS</string>
+    <string name="dummy_name">Bahar Demirkan</string>
+    <string name="dummy_phone">05322222222</string>
+    <string name="package_description">The smart telecom. We give you data-led packages with ultimate flexibility, so you can refuel and go.</string>
+    <string name="package_title">En Uygun Paketi Seç</string>
+    <string name="choose_package">Paketini seç</string>
+    <string name="step_first">1</string>
+    <string name="step_Second">2</string>
+    <string name="step_third">3</string>
+    <string name="step_fourth">4</string>
+    <string name="step_fifth">5</string>
+    <string name="on_digital_services">ON DIGITAL SERVICES</string>
+    <string name="to_use_on_anything">TO USE ON ANYTHING</string>
+    <string name="on_calls">ON CALLS</string>
+    <string name="texts">TEXTS</string>
+</resources>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="subscription"
+            type="com.solidict.poc.vo.response_modals.Subscription" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+
+                    android:id="@+id/tv_package_type"
+                    style="@style/PackageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@{subscription.name}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/ll_app_count_container"
+                    subscriptionBgButtonBinding="@{subscription.colorType}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_package_type"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_package_type">
+
+                    <TextView
+                        android:id="@+id/tv_app_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:text="@{String.valueOf(subscription.appCount)}"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="italic"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_package_type"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_app"
+                        app:layout_constraintTop_toTopOf="@+id/tv_package_type" />
+
+                    <TextView
+
+                        android:id="@+id/tv_app"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="APP"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+
+                        android:textStyle="italic" />
+
+                </LinearLayout>
+
+
+                <View
+                    android:id="@+id/seperator1"
+                    android:layout_width="0dp"
+                    android:layout_height="1px"
+                    android:background="@color/gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_package_type" />
+
+
+                <TextView
+                    android:id="@+id/tv_package_internet"
+
+                    style="@style/PackageText"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="@{String.format(@string/gb_format,subscription.dataGigabytes)}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seperator1" />
+
+
+                <TextView
+                    android:id="@+id/tv_internet_use_type"
+                    android:layout_width="wrap_content"
+android:textSize="12sp"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="@string/to_use_on_anything"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seperator1" />
+
+
+                <View
+
+                    android:id="@+id/seperator2"
+                    android:layout_width="0dp"
+                    android:layout_height="1px"
+                    android:background="@color/gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_package_internet" />
+
+
+                <TextView
+                    android:id="@+id/tv_package_minutes"
+
+                    style="@style/PackageText"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="@{String.format(@string/min_format,subscription.digitalServiceMinutes)}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seperator2" />
+
+
+                <TextView
+                    android:textSize="12sp"
+
+                    android:id="@+id/tv_internet_use_minutes"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="@string/on_digital_services"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seperator2" />
+
+
+                <View
+                    android:id="@+id/seperator3"
+                    android:layout_width="0dp"
+                    android:layout_height="1px"
+                    android:layout_marginTop="36dp"
+                    android:background="@color/gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_package_minutes" />
+
+
+                <TextView
+                    android:textSize="12sp"
+                    android:id="@+id/tv_quantity_of_extra_package_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="@{String.format(@string/sms_format,subscription.smsCount)}"
+                    android:textColor="@color/black"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seperator3" />
+
+                <TextView
+                    android:textSize="12sp"
+                    android:id="@+id/tv_type_of_extra_package_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/texts"
+                    android:textColor="@color/gray"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toEndOf="@+id/tv_quantity_of_extra_package_first"
+                    app:layout_constraintTop_toTopOf="@+id/tv_quantity_of_extra_package_first" />
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_type_of_extra_package_first"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_quantity_of_extra_package_second"
+                    app:layout_constraintStart_toEndOf="@+id/tv_type_of_extra_package_first"
+                    app:layout_constraintTop_toTopOf="@+id/tv_type_of_extra_package_first" />
+
+                <TextView
+                    android:textSize="12sp"
+                    android:id="@+id/tv_quantity_of_extra_package_second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:text="@{String.format(@string/mins_format,subscription.callMinutes)}"
+                    android:textColor="@color/black"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_type_of_extra_package_second"
+                    app:layout_constraintTop_toTopOf="@+id/tv_type_of_extra_package_second" />
+
+                <TextView
+                    android:textStyle="italic"
+                    android:id="@+id/tv_type_of_extra_package_second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:textSize="12sp"
+                    android:text="@string/on_calls"
+                    android:textColor="@color/gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seperator3" />
+
+                <ImageView
+
+                    android:id="@+id/iv_bg"
+                    subscriptionSrcItemBinding="@{subscription.colorType}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_type_of_extra_package_second" />
+
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="@{String.valueOf(subscription.price)}"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_bg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/iv_bg" />
+
+                <TextView
+                    android:id="@+id/tv_price_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="TL/AY"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toEndOf="@+id/tv_price"
+                    app:layout_constraintTop_toTopOf="@+id/tv_price" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/select_bg"
+                    android:paddingStart="32dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="32dp"
+                    android:paddingBottom="8dp"
+                    android:text="SEÇ"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/iv_bg" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </FrameLayout>
+</layout>
